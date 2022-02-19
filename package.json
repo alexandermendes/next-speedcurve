@@ -1,6 +1,6 @@
 {
   "name": "next-speedcurve",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SpeedCurve integration for Next.js applications.",
   "author": "Alex Mendes",
   "license": "ISC",
