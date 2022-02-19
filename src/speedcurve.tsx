@@ -6,7 +6,7 @@ import { SpeedCurveScripts } from './scripts';
 declare global {
   interface Window {
     LUX: {
-      addData: () => void,
+      addData: (key: string, value: string | number) => void,
       auto?: boolean;
       debug?: boolean;
       forceSample: () => void,

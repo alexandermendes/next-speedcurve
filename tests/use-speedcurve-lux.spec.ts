@@ -5,7 +5,7 @@ type LUXProps = 'auto' | 'debug' | 'label' | 'samplerate';
 
 interface Window {
   LUX?: {
-    addData: () => void,
+    addData: (key: string, value: string | number) => void,
     forceSample: () => void,
     init: () => void,
     send: () => void,
