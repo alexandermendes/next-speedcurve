@@ -6,14 +6,14 @@ import { SpeedCurveScripts } from './scripts';
 declare global {
   interface Window {
     LUX: {
-      addData: Function,
+      addData: () => void,
       auto?: boolean;
       debug?: boolean;
-      forceSample: Function;
-      init: Function;
+      forceSample: () => void,
+      init: () => void,
       label?: string;
       samplerate?: number;
-      send: Function;
+      send: () => void,
     };
   }
 }

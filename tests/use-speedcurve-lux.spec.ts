@@ -3,9 +3,18 @@ import { useSpeedCurveLUX } from '../src';
 
 type LUXProps = 'auto' | 'debug' | 'label' | 'samplerate';
 
+interface Window {
+  LUX?: {
+    addData: () => void,
+    forceSample: () => void,
+    init: () => void,
+    send: () => void,
+  };
+}
+
 describe('useSpeedCurveLUX', () => {
   beforeEach(() => {
-    window.LUX = {
+    (window as Window).LUX = {
       addData: jest.fn(),
       forceSample: jest.fn(),
       init: jest.fn(),
@@ -26,7 +35,7 @@ describe('useSpeedCurveLUX', () => {
     });
 
     it('sets the property if a value is given and window.LUX is undefined', () => {
-      delete (window as any).LUX;
+      delete (window as Window).LUX;
 
       renderHook(() => useSpeedCurveLUX({ [key]: value }));
 

@@ -18,7 +18,9 @@ HeadMock.mockImplementation(({ children }) => (
   </div>
 ));
 
-const getRouterCallback = (scope: 'on' | 'off', name: string): Function => {
+type Noop = () => void;
+
+const getRouterCallback = (scope: 'on' | 'off', name: string): Noop => {
   const eventMock = jest.mocked(RouterMock.events[scope]);
 
   const [, callback] = eventMock.mock.calls.find((call) => call[0] === name) || [];
